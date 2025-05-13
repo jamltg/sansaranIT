@@ -7,7 +7,7 @@ export default function HomeText() {
         
         {/* Text Section */}
         <div className="md:w-1/2 w-full text-center md:text-left">
-          <h2 className="text-3xl font-bold text-[#1f5175] mb-4">Add Info Here</h2>
+          <h2 className="text-3xl font-extrabold text-[#1f5175] mb-4">Add Info Here</h2>
           <p className="text-gray-700 leading-relaxed">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, iste minus obcaecati aut distinctio officia quas sapiente tempora neque modi sint impedit. Ea nobis velit, iure iste ullam soluta obcaecati.
           </p>

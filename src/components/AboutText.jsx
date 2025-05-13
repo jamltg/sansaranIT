@@ -2,7 +2,7 @@ import aboutImage from '../assets/about.webp';
 
 export default function AboutText() {
   return (
-    <div className="bg-white min-h-[calc(100vh-16.5rem)] flex items-center px-4 py-4 mt-8">
+    <div className="bg-white min-h-[calc(100vh-14.5rem)] flex items-center px-4 py-4 mt-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-10">
             <div className="w-full md:w-1/2 flex justify-center">
                 <img
