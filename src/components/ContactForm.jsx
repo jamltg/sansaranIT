@@ -1,12 +1,20 @@
 import { useState } from "react";
 
 function ContactForm() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    middleName: "" // Honeypot field
+  });
   const [isSent, setIsSent] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -14,21 +22,29 @@ function ContactForm() {
     setIsSent(false);
     setIsError(false);
 
+    // If honeypot field is filled, likely a bot
+    if (formData.middleName) return;
+
     try {
-      const response = await fetch("https://formsubmit.co/fe7cce20e62f035435eb0afe542df67f", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json"
         },
-        body: new URLSearchParams({
-          ...formData,
-          _captcha: "false"
-        }).toString(),
+        body: JSON.stringify({
+          access_key: "ec71b2d5-0fda-433b-8f5b-0d47a41c6e71",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          middleName: formData.middleName, // Honeypot (Web3Forms ignores if empty)
+          replyto: formData.email
+        })
       });
 
-      if (response.ok) {
+      const result = await response.json();
+      if (result.success) {
         setIsSent(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", middleName: "" });
       } else {
         setIsError(true);
       }
@@ -39,7 +55,6 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 w-full">
-      {/* Success Message */}
       {isSent && (
         <div className="p-4 text-green-700 bg-green-100 rounded">
           Your message has been sent successfully!
@@ -51,9 +66,23 @@ function ContactForm() {
         </div>
       )}
 
+      {/* Honeypot Field (hidden from humans) */}
+      <input
+        type="text"
+        name="middleName"
+        value={formData.middleName}
+        onChange={handleChange}
+        style={{ display: "none" }}
+        aria-hidden="true"
+        autoComplete="off"
+        tabIndex="-1"
+      />
+
       {/* Name Field */}
       <div className="flex flex-col">
-        <label htmlFor="name" className="mb-1 font-medium text-gray-700">Name</label>
+        <label htmlFor="name" className="mb-1 font-medium text-gray-700">
+          Name
+        </label>
         <input
           type="text"
           name="name"
@@ -68,7 +97,9 @@ function ContactForm() {
 
       {/* Email Field */}
       <div className="flex flex-col">
-        <label htmlFor="email" className="mb-1 font-medium text-gray-700">Email</label>
+        <label htmlFor="email" className="mb-1 font-medium text-gray-700">
+          Email
+        </label>
         <input
           type="email"
           name="email"
@@ -83,7 +114,9 @@ function ContactForm() {
 
       {/* Message Field */}
       <div className="flex flex-col">
-        <label htmlFor="message" className="mb-1 font-medium text-gray-700">Message</label>
+        <label htmlFor="message" className="mb-1 font-medium text-gray-700">
+          Message
+        </label>
         <textarea
           name="message"
           id="message"
