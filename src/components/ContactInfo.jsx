@@ -23,12 +23,12 @@ export default function ContactInfo() {
 
       <div>
         <h3 className="font-semibold text-[#1f5175] mb-2">Opening Hours</h3>
-        <ul class="text-gray-700 space-y-1">
-          <li class="flex justify-between max-w-[180px] space-x-5"><span>Mon</span><span>8.30am – 5.30pm</span></li>
-          <li class="flex justify-between max-w-[180px] space-x-5"><span>Tues</span><span>8.30am – 5.30pm</span></li>
-          <li class="flex justify-between max-w-[180px] space-x-5"><span>Wed</span><span>8.30am – 5.30pm</span></li>
-          <li class="flex justify-between max-w-[180px] space-x-5"><span>Thurs</span><span>8.30am – 5.30pm</span></li>
-          <li class="flex justify-between max-w-[180px] space-x-5"><span>Fri</span><span>8.30am – 5.30pm</span></li>
+        <ul className="text-gray-700 space-y-1">
+          <li className="flex justify-between max-w-[180px] space-x-5"><span>Mon</span><span>8.30am – 5.30pm</span></li>
+          <li className="flex justify-between max-w-[180px] space-x-5"><span>Tues</span><span>8.30am – 5.30pm</span></li>
+          <li className="flex justify-between max-w-[180px] space-x-5"><span>Wed</span><span>8.30am – 5.30pm</span></li>
+          <li className="flex justify-between max-w-[180px] space-x-5"><span>Thurs</span><span>8.30am – 5.30pm</span></li>
+          <li className="flex justify-between max-w-[180px] space-x-5"><span>Fri</span><span>8.30am – 5.30pm</span></li>
         </ul>
       </div>
     </div>
