@@ -1,4 +1,4 @@
-import parallax from '../assets/parallax.jpg'; // Replace with your actual image path
+import parallax from '../assets/parallax.webp';
 
 export default function Parallax() {
   return (

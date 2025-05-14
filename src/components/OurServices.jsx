@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import networksupport from '../assets/network-support.jpg';
-import projectmanagement from '../assets/project-management.jpg';
+import projectmanagement from '../assets/project-management.webp';
 import cybersecurity from '../assets/cybersecurity.jpg';
 
 export default function OurServices() {
