@@ -24,6 +24,7 @@ export default function ContactInfo() {
       <div>
         <h3 className="font-semibold text-[#1f5175] mb-2">Opening Hours</h3>
         <ul className="text-gray-700 space-y-1">
+          {/* Line up schedule */}
           <li>Mon 8.30am – 5.30pm</li>
           <li>Tues 8.30am – 5.30pm</li>
           <li>Wed 8.30am – 5.30pm</li>

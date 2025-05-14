@@ -17,7 +17,7 @@ export default function Topbar() {
         {/* Right Section: Icons */}
         <div className="hidden md:flex gap-4 items-center md:mr-0">
           <a
-            href="https://www.linkedin.com"
+            href="http://linkedin.com/in/ian-withington"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-blue-500"
