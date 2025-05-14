@@ -12,7 +12,7 @@ export default function AboutText() {
                 />
             </div>
             <div className='w-full md:w-1/2'>
-                <h2 className="text-3xl font-bold mb-4 text-[#1f5175]">About Sansaran IT</h2>
+                <h2 className="text-3xl font-extrabold mb-4 text-[#1f5175]">About Sansaran IT</h2>
                 <p className='text-lg text-gray-700 mb-6'>Sansaran IT was founded with a mission to:</p>
                 <blockquote className="border-l-4 border-[#1f5175] pl-4 italic text-gray-600 mb-6">
                     “Provide exceptional outsourced IT services, that drive SME growth, reduce risks, and lower costs.”

@@ -10,7 +10,7 @@ export default function ContactInfo() {
       />
 
       <div>
-        <h2 className="text-2xl font-bold text-[#1f5175] mb-2">Let’s Get in Touch</h2>
+        <h2 className="text-2xl font-extrabold text-[#1f5175] mb-2">Let’s Get in Touch</h2>
         <p className="text-gray-700 leading-relaxed">
           Whether you’re looking for reliable IT support or simply have a question, we’d love to hear from you. Fill out the form or contact us directly below.
         </p>
