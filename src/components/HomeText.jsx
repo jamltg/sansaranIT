@@ -6,13 +6,13 @@ export default function HomeText() {
       <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-10">
         
         {/* Text Section */}
-        <div className="md:w-1/2 w-full text-center">
+        <div className="md:w-1/2 w-full">
           <h2 className="text-3xl font-extrabold text-[#1f5175] mb-4 text-center md:text-left">Why Choose Us?</h2>
-          <p className="text-gray-700 mb-4 leading-relaxed md:text-left">
+          <p className="text-gray-700 mb-4 leading-relaxed text-justify">
             Sansaran IT is a trusted, go-to partner for supporting SMEs with their evolving business needs.
             We pride ourselves on responsive communication, a practical, solutions-focused approach, and a strong understanding of the challenges businesses face.
           </p>
-          <p className="text-gray-700 leading-relaxed md:text-left">From IT infrastructure and software support to strategic guidance, Sansaran IT delivers reliable, efficient, and tailored solutions—helping SMEs operate smoothly and grow with confidence.</p>
+          <p className="text-gray-700 leading-relaxed text-justify">From IT infrastructure and software support to strategic guidance, Sansaran IT delivers reliable, efficient, and tailored solutions—helping SMEs operate smoothly and grow with confidence.</p>
         </div>
 
         {/* Image Section */}
