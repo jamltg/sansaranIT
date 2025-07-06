@@ -9,12 +9,9 @@ export default function Footer() {
         </div>
         {/* Links */}
         <div className="flex flex-col justify-center items-center gap-4 lg:flex-row md:justify-between">
-          <div className="hidden flex justify-center text-center lg:flex">
-            &copy; {new Date().getFullYear()} Sansaran IT
-          </div>
           <a href="/terms-of-service" className="hover:underline">Terms of Service</a>
           <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link>
-          <div className="flex justify-center text-center lg:hidden">
+          <div className="flex justify-center text-center">
             &copy; {new Date().getFullYear()} Sansaran IT
           </div>
         </div>
