@@ -55,6 +55,7 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 w-full">
+      <h2 className="text-2xl font-extrabold text-[#1f5175] mb-2">Send Us An Email</h2>
       {isSent && (
         <div className="p-4 text-green-700 bg-green-100 rounded">
           Your message has been sent successfully!

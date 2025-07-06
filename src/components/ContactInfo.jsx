@@ -2,11 +2,11 @@ import dealImage from "../assets/deal.webp";
 
 export default function ContactInfo() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col justify-between h-full gap-6">
       <img
         src={dealImage}
         alt="Contact Sansaran IT"
-        className="w-full h-auto max-h-[400px] object-cover rounded-lg shadow-md"
+        className="w-full object-cover rounded-lg shadow-md"
       />
 
       <div>
@@ -17,7 +17,7 @@ export default function ContactInfo() {
       </div>
 
       <div className="text-gray-800 space-y-1">
-        <p><strong>Phone:</strong> 0203 2398472</p>
+        <p><strong>Phone:</strong> 0333 335 6402</p>
         <p><strong>Email:</strong> hello@sansaran-it.co.uk</p>
       </div>
 

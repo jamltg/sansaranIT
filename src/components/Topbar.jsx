@@ -12,10 +12,16 @@ export default function Topbar() {
             <i className="fas fa-map-marker-alt"></i>
             <span>hello@sansaran-it.co.uk</span>
           </div>
+          {/* <div className="hidden md:flex items-center gap-2">
+            <a href="tel:03333356402" className="flex items-center gap-2 text-white hover:text-green-500">
+              <i className="fas fa-phone text-md"></i>
+              <span>0333 335 6402</span>
+            </a>
+          </div> */}
         </div>
 
         {/* Right Section: Icons */}
-        <div className="flex gap-4 items-center sm:mt-1 md:mr-0">
+        <div className="flex gap-6 items-center sm:mt-1 md:mr-0">
           <a
             href="http://linkedin.com/in/ian-withington"
             target="_blank"
@@ -24,8 +30,9 @@ export default function Topbar() {
           >
             <i className="fab fa-linkedin fa-lg"></i>
           </a>
-          <a href="tel:+1234567890" className="text-white hover:text-green-500">
-            <i className="fas fa-phone fa-lg"></i>
+          <a href="tel:03333356402" className="flex items-center gap-2 text-white hover:text-green-500">
+            <i className="fas fa-phone text-md"></i>
+            <span>0333 335 6402</span>
           </a>
         </div>
       </div>
