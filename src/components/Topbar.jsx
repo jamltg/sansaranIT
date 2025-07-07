@@ -8,15 +8,9 @@ export default function Topbar() {
             <i className="fas fa-clock"></i>
             <span className="text-center">Mon - Fri 8:30am - 5:30pm</span>
           </div>
-          <div className="hidden md:flex items-center gap-2">
+          {/* <div className="hidden md:flex items-center gap-2">
             <i className="fas fa-map-marker-alt"></i>
             <span>hello@sansaran-it.co.uk</span>
-          </div>
-          {/* <div className="hidden md:flex items-center gap-2">
-            <a href="tel:03333356402" className="flex items-center gap-2 text-white hover:text-green-500">
-              <i className="fas fa-phone text-md"></i>
-              <span>0333 335 6402</span>
-            </a>
           </div> */}
         </div>
 
