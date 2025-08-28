@@ -16,7 +16,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center h-full gap-6 text-sm font-medium relative">
+        <nav className="hidden md:flex items-center h-full gap-12 lg:gap-14 text-md font-medium relative">
           <Link to="/" className="hover:text-blue-400 h-full flex items-center">
             Home
           </Link>
@@ -75,7 +75,7 @@ export default function Header() {
         </nav>
 
         {/* Desktop Icons */}
-        <div className="hidden lg:flex items-center gap-6 text-sm">
+        <div className="hidden lg:flex items-center gap-6 text-md">
           <a
             href="tel:03333356402"
             className="flex items-center gap-2 hover:text-blue-500"
