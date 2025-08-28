@@ -1,167 +1,180 @@
-import React, { useState } from 'react';
-import logo from '../assets/sansaran-logo.png';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/sansaran-logo.png";
+import { Sling as Hamburger } from "hamburger-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <div className="bg-white w-full shadow-md px-10 relative z-50">
-      <div className="max-w-[1200px] mx-auto flex justify-between items-center h-20 relative">
+    <header className="bg-[#0a0a0a] text-white relative z-50">
+      <div className="container mx-auto flex items-center justify-between px-4 h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center z-20">
-          <img 
-            src={logo} 
-            alt="Logo" 
-            className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20" 
-          />
+        <Link to="/" className="flex items-center gap-2 h-full">
+          <img src={logo} alt="Logo" className="h-12 md:h-16 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex text-gray-700 h-full">
-          <ul className="flex h-full items-center space-x-8">
-            <li className="h-full">
-              <a href="/about" className="h-full flex items-center hover:text-blue-500 px-2">
-                About
-              </a>
-            </li>
+        <nav className="hidden md:flex items-center h-full gap-6 text-sm font-medium relative">
+          <Link to="/" className="hover:text-blue-400 h-full flex items-center">
+            Home
+          </Link>
+          <Link to="/about" className="hover:text-blue-400 h-full flex items-center">
+            About
+          </Link>
 
-            {/* Services Menu with Hover Dropdown */}
-            <li
-              className="relative h-full"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+          {/* Services dropdown */}
+          <div
+            className="relative h-full flex items-center"
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
+          >
+            <button className="hover:text-blue-400 h-full flex items-center">
+              Services
+            </button>
+
+            {/* Animated dropdown */}
+            <div
+              className={`absolute left-0 top-full w-52 bg-white text-gray-800 shadow-lg rounded-b-md overflow-hidden transition-all duration-300 ease-out z-50 ${
+                isServicesOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+              }`}
             >
-              <span className="h-full flex items-center hover:text-blue-500 px-2 cursor-pointer">
-                Services
-              </span>
+              <ul>
+                <li>
+                  <Link
+                    to="/services/network-support"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Network Support
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/project-management"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Project Management
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/cyber-security"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Cyber Security
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-              {isServicesOpen && (
-                <ul 
-                  className="absolute top-full left-0 mt-0 bg-white shadow-lg rounded-b-md py-2 w-52 z-30"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                >
-                  <li>
-                    <Link 
-                      to="/services/network-support" 
-                      className="block px-4 py-2 hover:bg-gray-100"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      Network Support
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/services/project-management" 
-                      className="block px-4 py-2 hover:bg-gray-100"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      Project Management
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/services/cyber-security" 
-                      className="block px-4 py-2 hover:bg-gray-100"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      Cyber Security
-                    </Link>
-                  </li>
-                </ul>
-              )}
-            </li>
-
-            <li className="h-full">
-              <Link to="/contact" className="h-full flex items-center hover:text-blue-500 px-2">
-                Contact
-              </Link>
-            </li>
-          </ul>
+          <Link to="/contact" className="hover:text-blue-400 h-full flex items-center">
+            Contact Us
+          </Link>
         </nav>
 
-        {/* Mobile Hamburger */}
-        <div className="md:hidden z-20">
-          <button 
-            onClick={toggleMenu} 
-            className="text-gray-700 focus:outline-none"
+        {/* Desktop Icons */}
+        <div className="hidden lg:flex items-center gap-6 text-sm">
+          <a
+            href="tel:03333356402"
+            className="flex items-center gap-2 hover:text-blue-500"
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-6 w-6" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth="2" 
-                d="M4 6h16M4 12h16M4 18h16" 
-              />
-            </svg>
-          </button>
+            <i className="fas fa-phone text-md"></i>
+            <span>0333 335 6402</span>
+          </a>
+          <a
+            href="http://linkedin.com/in/ian-withington"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500"
+          >
+            <i className="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+
+        {/* iPad Icons */}
+        <div className="hidden md:flex lg:hidden items-center gap-4">
+          <a
+            href="http://linkedin.com/in/ian-withington"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500"
+          >
+            <i className="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="tel:03333356402" className="hover:text-green-500">
+            <i className="fas fa-phone text-md"></i>
+          </a>
+        </div>
+
+        {/* Mobile Hamburger */}
+        <div className="md:hidden">
+          <Hamburger size={22} toggled={isMenuOpen} toggle={setIsMenuOpen} />
         </div>
       </div>
 
-      {/* Mobile Nav */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-30">
-          <ul className="flex flex-col space-y-4 p-6 w-full">
-            <li>
-              <Link 
-                to="/about" 
-                className="block w-full text-gray-700 hover:text-blue-500" 
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/services/network-support" 
-                className="block w-full text-gray-700 hover:text-blue-500" 
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Network Support
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/services/project-management" 
-                className="block w-full text-gray-700 hover:text-blue-500" 
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Project Management
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/services/cyber-security" 
-                className="block w-full text-gray-700 hover:text-blue-500" 
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Cyber Security
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/contact" 
-                className="block w-full text-gray-700 hover:text-blue-500" 
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
-    </div>
+      {/* Mobile Menu with animation */}
+      <div
+        className={`md:hidden bg-[#0a0a0a] border-t-2 border-t-[#1f5175] px-4 pb-4 overflow-hidden transform transition-all duration-300 ease-out ${
+          isMenuOpen ? "max-h-96 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
+        }`}
+      >
+        <nav className="flex flex-col gap-3 mt-2">
+          <Link to="/" className="hover:text-blue-400" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </Link>
+          <Link to="/about" className="hover:text-blue-400" onClick={() => setIsMenuOpen(false)}>
+            About
+          </Link>
+
+          {/* Mobile Services dropdown */}
+          <div>
+            <button
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="hover:text-blue-400 w-full text-left flex gap-2 items-center"
+            >
+              <span>Services</span>
+              <i className={`mt-1 text-xs fas fa-chevron-down transition-transform duration-300 ${isServicesOpen ? "rotate-180" : "rotate-0"}`}></i>
+            </button>
+            {isServicesOpen && (
+              <ul className="pl-4 mt-1 flex flex-col gap-2">
+                <li>
+                  <Link
+                    to="/services/network-support"
+                    className="hover:text-blue-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Network Support
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/project-management"
+                    className="hover:text-blue-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Project Management
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/cyber-security"
+                    className="hover:text-blue-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Cyber Security
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
+
+          <Link to="/contact" className="hover:text-blue-400" onClick={() => setIsMenuOpen(false)}>
+            Contact Us
+          </Link>
+        </nav>
+      </div>
+    </header>
   );
 }

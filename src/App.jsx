@@ -14,7 +14,6 @@ import TermsOfService from "./pages/TermsOfService";
 function App() {
   return (
     <BrowserRouter>
-      <Topbar/>
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>

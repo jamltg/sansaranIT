@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1f5175] text-white py-6 px-10">
+    <footer className="bg-[#0a0a0a] text-white py-6 px-10">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-4 lg:flex-row lg:justify-between">
         <div className="flex justify-center text-center">
           Sansaran IT | Registered in England & Wales | CRN 16546813
